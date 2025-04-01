@@ -1,0 +1,10 @@
+{% import "/macros.html" as macros %}
+
+<h1>{{ _("Users") }}</h1>
+<div class="row">
+	<div class="col">
+		<form>
+			{{ macros.dyn_table("users", url_for("user_views.users")) }}
+		</form>
+	</div>
+</div>

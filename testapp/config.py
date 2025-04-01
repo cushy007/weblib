@@ -1,0 +1,4 @@
+PROJECT_REPO_NAME="weblib"
+APP_NAME = "Weblib"
+APP_VERSION = "0.01"
+APP_CSS = ()

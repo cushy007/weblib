@@ -1,0 +1,18 @@
+# Versions available as Debian Bookworm python3-<package>
+Babel==2.10.3
+bcrypt==3.2.2
+Flask==2.2.2
+Flask-Babel==2.0.0
+Flask-Login==0.6.2
+peewee==3.14.10
+Pillow==9.4.0
+#psycopg2==2.9.5
+psycopg2-binary==2.9.5
+pytz==2022.7.1
+qrcode==7.4.2
+Werkzeug==2.2.2
+
+# Dev only
+pytest==7.2.1
+time-machine==2.13.0
+selenium==4.8.3

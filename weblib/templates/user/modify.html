@@ -1,0 +1,4 @@
+{% import "/macros.html" as macros %}
+
+<h1>{{ _("User") }}</h1>
+{{ macros.new_form(form, _("Modify"), "/user/modify", on_cancel="/") }}

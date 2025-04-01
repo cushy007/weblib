@@ -1,0 +1,162 @@
+# French translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Chose an action"
+msgstr "Choisir une action"
+
+msgid "Come back to users list"
+msgstr "Revenir à la liste des usagers"
+
+msgid "Confirm deleting user ?"
+msgstr "Confirmer la suppression de l'usager ?"
+
+msgid "Confirm deletion ?"
+msgstr "Confirmer la suppression ?"
+
+msgid "Copy to clipboard"
+msgstr "Copier dans le presse-papiers"
+
+msgid "Create"
+msgstr "Créer"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Empty"
+msgstr "Vide"
+
+#, python-format
+msgid "File size is above the max (%s bytes)"
+msgstr "Fichier trop volumineux (%s octets)"
+
+msgid "First name"
+msgstr "Prénom"
+
+msgid "Forbidden access"
+msgstr "Accès non autorisé"
+
+msgid "Go back to site"
+msgstr "Revenir au site"
+
+msgid "Invalid password"
+msgstr "Mauvais mot de passe"
+
+msgid "Invalid user"
+msgstr "Cet utilisateur n'existe pas"
+
+msgid "Last name"
+msgstr "Nom"
+
+msgid "Login"
+msgstr "Connexion"
+
+msgid "Login page"
+msgstr "Page de connexion"
+
+msgid "Logout"
+msgstr "Déconnexion"
+
+msgid "Manage users"
+msgstr "Gérer les utilisateurs"
+
+msgid "Modify"
+msgstr "Modifier"
+
+msgid "Modify password"
+msgstr "Modifier le mot de passe"
+
+msgid "Modify roles"
+msgstr "Modifier les rôles"
+
+msgid "Modify user"
+msgstr "Modifier l'utilisateur"
+
+msgid "No"
+msgstr "Non"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Password confirmation"
+msgstr "Confirmation du mot de passe"
+
+msgid "Password reset"
+msgstr "Réinitialisation du mot de passe"
+
+#, python-format
+msgid "Please send this temporary password to %(firstname)s %(lastname)s"
+msgstr "Veuillez envoyer le mot de passe généré à %(firstname)s %(lastname)s"
+
+msgid "Register"
+msgstr "S'inscrire"
+
+msgid "Registration page"
+msgstr "Page d'inscription"
+
+msgid "Reset password"
+msgstr "Réinitialiser le mot de passe"
+
+msgid "Role"
+msgstr "Rôle"
+
+msgid "Roles"
+msgstr "Rôles"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "Server error"
+msgstr "Erreur de l'application. Veuillez contacter l'administrateur."
+
+msgid "Update"
+msgstr "Modifier"
+
+msgid "User"
+msgstr "Utilisateur"
+
+msgid "User name"
+msgstr "Nom d'utilisateur"
+
+msgid "User password"
+msgstr "Mot de passe"
+
+msgid "User roles"
+msgstr "Rôles de l'utilisateur"
+
+msgid "Username already exists"
+msgstr "Ce nom d'utilisateur existe déjà"
+
+msgid "Users"
+msgstr "Utilisateurs"
+
+msgid "Validate roles"
+msgstr "Valider les rôles"
+
+msgid "Yes"
+msgstr "Oui"
+
+#~ msgid "Invalid role(s) '%s'"
+#~ msgstr "Le(s) rôle(s) suivant(s) est/sont invalide(s) : '%s'"
+
+#~ msgid "Passwords are not identical"
+#~ msgstr "Les mots de passe sont différents"
+

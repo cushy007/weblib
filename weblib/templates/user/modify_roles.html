@@ -1,0 +1,4 @@
+{% import "/macros.html" as macros %}
+
+<h1>{{ _("User roles") }}</h1>
+{{ macros.new_form(form, _("Validate roles"), "/user/modify_roles", on_cancel=url_for("user_views.users")) }}

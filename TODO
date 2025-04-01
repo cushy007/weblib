@@ -1,0 +1,35 @@
+Improve logs
+
+Deployment in the cloud
+	pyformat.py pour SPDX
+	https://blog.ippon.fr/2022/03/07/securisez-auditez-automatisez-vos-bases-postgresql-1/
+
+Login
+	help for roles
+
+
+Look & feel
+	block level button
+	shadow
+	data-bs-dismiss sur les modals
+	https://dev.to/dcodeyt/create-a-button-with-a-loading-spinner-in-html-css-1c0h
+	- theming
+		- https://bootstrap.themes.guide/monotony/theme.css
+		- https://bootswatch.com/3/
+
+
+Technical
+	mydevice.io
+	<data> or <object> element for JSON instead of hidden field
+	<fieldset> pour double select
+
+	file upload
+		https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file
+		https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications
+		https://getbootstrap.com/docs/4.0/components/forms/#file-browser
+	https://developer.mozilla.org/en-US/docs/Learn/Forms/Sending_and_retrieving_form_data
+
+
+Documentation
+	https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n
+	https://www.matthieuamiguet.ch/blog/synchronize-clients-flask-application-websockets

@@ -1,0 +1,127 @@
+{% macro tabs(level, available, active, href) %}
+<ul class="nav nav-tabs">
+	{% for tab in available %}
+	<li class="nav-item">
+		<a id={{ "tab-l%d-%s" % (level, tab.name) }} class="nav-link {% if active.name == tab.name %}active{% endif %}" href="{{ href + tab.name }}">{{ tab.i18n }}</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endmacro %}
+
+
+{% macro button_box(name, id, title, buttons) %}
+{% if buttons %}
+<div id="button-box-{{ name }}-{{ id }}" class="modal fade" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">{{ title }}</h5>
+				<button type="button" class="close" data-bs-dismiss="modal">
+				<span>&times;</span>
+				</button>
+			</div>
+			<div class="modal-input">
+				<div class="d-grid gap-2 offset-sm-1 col-sm-10 pb-3 mx-auto">
+					{% for button in buttons %}
+					<a type="button" class="btn btn-primary btn-lg btn-block text-nowrap mt-3 {{ 'confirmable' if button.is_confirmable else '' }}" href="{{ button.href }}?id={{ id }}">{{ button.i18n }}</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endmacro %}
+
+
+{% macro dyn_button_box(name, title) %}
+<div id="button-box-{{ name }}" class="modal fade" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 id="button-box-{{ name }}-title" class="modal-title">{{ title }}</h5>
+				<button type="button" class="close" data-bs-dismiss="modal">
+					<span>&times;</span>
+				</button>
+			</div>
+			<div class="modal-input">
+				<div id="button-box-{{ name }}-body" class="d-grid gap-2 offset-1 col-10 pb-3 mx-auto"></div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endmacro %}
+
+
+{% macro dyn_table(name, content_url, has_create_button=True, has_searchbox=True) %}
+{{ dyn_button_box(name, _("Chose an action")) }}
+{% if has_searchbox %}
+<div class="row">
+	<div class="input-group">
+		<input name="{{name}}" class="form-control searchbox" type="text" autofocus>
+		<button class="btn btn-outline-secondary input-group-append">{{ _("Search") }}</button>
+	</div>
+</div>
+{% endif %}
+<div class="row">
+	<div class="table-responsive">
+		<table name="{{ name }}" class="table table-hover table-bordered" data-content='{{ "%s/%s.table" % (content_url, name) }}'>
+			<thead class="text-bg-primary">
+				<tr>
+					<th id="{{ name }}-spinner"><span class="spinner-border" role="status"></span></th>
+					<th id="{{ name }}-empty" class="hidden">{{ _("Empty") }}</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+			<tfoot>
+			</tfoot>
+		</table>
+	</div>
+	{% if has_create_button %}
+	<a id="btn-create-{{ name }}" class="btn btn-primary btn-block" href="{{ content_url + "/" + name }}/create">+</a>
+	{% endif %}
+</div>
+{% endmacro %}
+
+
+{% macro new_form(form, submit_label, formaction, on_cancel=None, has_submit=True) %}
+<form enctype="multipart/form-data">
+	<div class="col-sm-6">
+	{{ form.html }}
+	{% if on_cancel %}
+	<a href="{{ on_cancel }}" class="btn btn-secondary">{{ _("Cancel") }}</a>
+	{% endif %}
+	{% if has_submit %}
+	<input type="submit" value="{{ submit_label }}" formaction="{{ formaction }}" formmethod="post" class="btn btn-primary"></input>
+	{% endif %}
+	</div>
+</form>
+{% endmacro %}
+
+
+{% macro form_modal(id, title, form, submit_label, formaction) %}
+<div class="modal fade" id="{{ id }}" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">{{ title }}</h5>
+				<button type="button" class="close" data-bs-dismiss="modal">
+					<span>&times;</span>
+				</button>
+			</div>
+			<form enctype="multipart/form-data">
+				<div class="modal-input">
+					<div class="offset-sm-1 col-sm-10">
+					{{ form.html }}
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ _("Cancel") }}</button>
+					<input type="submit" class="btn btn-primary" value="{{ submit_label }}" formaction="{{ formaction }}" formmethod="post"></input>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endmacro %}

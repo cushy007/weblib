@@ -1,0 +1,13 @@
+{% include "/gear/header.html" %}
+{% import "/macros.html" as macros %}
+
+<h1>{{ item_name }} {{ reference }}</h1>
+
+{% if crud_step == "read" %}
+	{% for table_name, table_params in tables.items() %}
+		<h2>{{table_params.title}}</h2>
+		{{ macros.dyn_table(table_name, url, has_create_button=False, has_searchbox=False) }}
+	{% endfor %}
+{% elif crud_step != "delete" %}
+	{{ macros.new_form(form, _("Create") if crud_step == "create" else _("Update"), url ~ "/" ~ table_name ~ "/" ~ crud_step) }}
+{% endif %}

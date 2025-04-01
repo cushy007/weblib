@@ -1,0 +1,22 @@
+CRUD philosophy
+===============
+
+During a Creation or Update phase, errors are happening at three different stages:
+	1) on the page when submit is clicked: these errors are handled by the Web engine in accordance to the html attributes of the field (min, max, step, required...)
+	2) on the posted form after validation by the Python code (form.validate()). The form is refused and the fields that do not compy to their validator function(s)
+	  are displayed with an error message.
+	3) at the modification of the DB (violated constraints). The form must be displayed again like at stage 2.
+
+
+Some smartphones caracteristics
+===============================
+
+Information retrieved from https://www.mydevice.io
+
+Galaxy A33 5G
+=============
+
+Viewport: 384px / 24em
+
+JS screen.width: 384px
+JS screen.height: 854px

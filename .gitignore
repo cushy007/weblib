@@ -1,0 +1,16 @@
+weblib/translations/*/LC_MESSAGES/*.mo
+
+weblib/static/css/external/bootstrap.min.css
+weblib/static/css/external/bootstrap.min.css.map
+weblib/static/fontawesome/css/fontawesome.min.css
+weblib/static/fontawesome/css/regular.min.css
+weblib/static/fontawesome/css/solid.min.css
+weblib/static/fontawesome/webfonts/fa-regular-400.woff2
+weblib/static/fontawesome/webfonts/fa-solid-900.woff2
+weblib/static/script/external/YConsole.js
+weblib/static/script/external/bootstrap.bundle.js
+weblib/static/script/external/bootstrap.bundle.js.map
+weblib/static/script/external/domReady.js
+weblib/static/script/external/html5-qrcode.js
+weblib/static/script/external/require.js
+

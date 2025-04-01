@@ -1,0 +1,162 @@
+# English translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Chose an action"
+msgstr "Chose an action"
+
+msgid "Come back to users list"
+msgstr ""
+
+msgid "Confirm deleting user ?"
+msgstr ""
+
+msgid "Confirm deletion ?"
+msgstr ""
+
+msgid "Copy to clipboard"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "Empty"
+msgstr ""
+
+#, python-format
+msgid "File size is above the max (%s bytes)"
+msgstr ""
+
+msgid "First name"
+msgstr "First name"
+
+msgid "Forbidden access"
+msgstr ""
+
+msgid "Go back to site"
+msgstr ""
+
+msgid "Invalid password"
+msgstr ""
+
+msgid "Invalid user"
+msgstr ""
+
+msgid "Last name"
+msgstr ""
+
+msgid "Login"
+msgstr ""
+
+msgid "Login page"
+msgstr ""
+
+msgid "Logout"
+msgstr ""
+
+msgid "Manage users"
+msgstr ""
+
+msgid "Modify"
+msgstr ""
+
+msgid "Modify password"
+msgstr ""
+
+msgid "Modify roles"
+msgstr ""
+
+msgid "Modify user"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Password confirmation"
+msgstr ""
+
+msgid "Password reset"
+msgstr ""
+
+#, python-format
+msgid "Please send this temporary password to %(firstname)s %(lastname)s"
+msgstr ""
+
+msgid "Register"
+msgstr ""
+
+msgid "Registration page"
+msgstr ""
+
+msgid "Reset password"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Roles"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Server error"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "User name"
+msgstr ""
+
+msgid "User password"
+msgstr ""
+
+msgid "User roles"
+msgstr ""
+
+msgid "Username already exists"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Validate roles"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+#~ msgid "Invalid role(s) '%s'"
+#~ msgstr "Invalid role(s) '%s'"
+
+#~ msgid "Passwords are not identical"
+#~ msgstr ""
+

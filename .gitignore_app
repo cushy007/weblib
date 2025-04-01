@@ -1,0 +1,4 @@
+*.pyc
+webapp/translations/*/LC_MESSAGES/*.mo
+config.ini
+webapp/static/weblib
