@@ -2,7 +2,7 @@
 
 REQUIRE_JS="2.3.7"
 DOM_READY="2.0.1"
-BOOTSTRAP="5.3.3"
+BOOTSTRAP="5.2.3"
 FONT_AWESOME="6.7.2"
 
 SCRIPT_DIR="./script/external/"
