@@ -75,6 +75,11 @@ remove_mo_from_vcs "../weblib/"
 git push origin master
 git push origin ${VERSION}
 
+if git remote | grep -q "github"; then
+	git push github master
+	git push github ${VERSION}
+fi
+
 make messages
 
 echo "########## TAG ${VERSION} done :)"
