@@ -1,14 +1,13 @@
 import logging
 
-from flask_babel import gettext as _
-from flask_babel import lazy_gettext as _l
+from flask_babel import gettext as _, lazy_gettext as _l
+from testapp.requests import get_color_choices, get_parent_choices
 
 from testapp.models import ComprehensiveModel
-from testapp.requests import get_color_choices, get_parent_choices
-from weblib.forms import (
-	BARCODE_FORMAT, BarcodeField, BaseForm, BooleanField, DatalistField, DateField, DateTimeField, DecimalField,
-	DoubleSelectField, FileField, IntegerField, PriceField, SelectField, TextAreaField, TextField
-)
+from weblib.forms.fields import (BARCODE_FORMAT, BarcodeField, BooleanField, DatalistField, DateField, DateTimeField,
+	DecimalField, DoubleSelectField, FileField, IntegerField, PriceField, SelectField, TextAreaField, TextField)
+from weblib.forms.forms import BaseForm
+
 
 _LOGGER = logging.getLogger(__name__)
 

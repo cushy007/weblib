@@ -25,7 +25,7 @@ if environ.get('APP_MODULE') == "testapp":
 else:
 	from webapp import CONFIG_CUSTOMIZATION
 
-from weblib.forms import LoginForm, ModifyPasswordForm, ModifyRolesForm, RegistrationForm, UserForm
+from weblib.forms.forms import LoginForm, ModifyPasswordForm, ModifyRolesForm, RegistrationForm, UserForm
 from weblib.models import User
 from weblib.roles import ROLE_ADMIN, roles_required, user_has_one_of_these_roles
 from weblib.table import Table

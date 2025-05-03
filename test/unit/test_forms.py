@@ -3,16 +3,15 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 #
 import datetime as dt
+import time_machine
 from unittest.mock import Mock
 
 import pytest
-import time_machine
 from werkzeug.datastructures import MultiDict
 
-from weblib.forms import (
-	BaseForm, DateField, DecimalField, DoubleSelectField, FileField, IntegerField, PriceField, SelectField, TextAreaField,
-	TextField, UnknownFieldException
-)
+from weblib.forms.fields import (DateField, DecimalField, DoubleSelectField, FileField, IntegerField, PriceField,
+	SelectField, TextAreaField, TextField)
+from weblib.forms.forms import BaseForm, UnknownFieldException
 from weblib.models import flask_db
 
 
