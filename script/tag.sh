@@ -63,6 +63,7 @@ pushd ${WEBLIB_PATH}
 	TAG_NAME=${PROJECT_REPO_NAME}-${VERSION}
 	echo "########## Taging weblib $TAG_NAME..."
 	git tag ${TAG_NAME}
+	git push origin master
 	git push origin ${TAG_NAME}
 popd
 
@@ -78,6 +79,10 @@ git push origin ${VERSION}
 if git remote | grep -q "github"; then
 	git push github master
 	git push github ${VERSION}
+	pushd ${WEBLIB_PATH}
+		git push github master
+		git push github ${TAG_NAME}
+	popd
 fi
 
 make messages
