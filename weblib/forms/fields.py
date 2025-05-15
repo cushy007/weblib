@@ -133,6 +133,9 @@ class TextField(BaseField):
 	html_tag = "input"
 	html_type = "text"
 
+	def from_repr(self, value):
+		return value.strip()
+
 
 class PasswordField(BaseField):
 	html_tag = "input"

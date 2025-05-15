@@ -5,20 +5,19 @@
 import logging
 from copy import copy
 from os import environ
-from os.path import join
 from secrets import token_urlsafe
 from urllib.parse import urljoin, urlparse
 
+import peewee
 from bcrypt import gensalt, hashpw
 from flask import Blueprint, abort, current_app, jsonify, redirect, render_template, request, session, url_for
-from flask_babel import gettext as _
-from flask_babel import lazy_gettext as _l
+from flask_babel import gettext as _, lazy_gettext as _l
 from flask_login import current_user, fresh_login_required, login_required, login_user, logout_user
+from os.path import join
+from weblib.requests import (DatabaseException, TableRequestResult, create_user, delete_user, get_user, get_user_roles,
+	get_users, has_any_registered_user, update_roles)
+from werkzeug.exceptions import HTTPException
 
-from weblib.requests import (
-	DatabaseException, TableRequestResult, create_user, delete_user, get_user, get_user_roles, get_users,
-	has_any_registered_user, update_roles
-)
 
 if environ.get('APP_MODULE') == "testapp":
 	from testapp import CONFIG_CUSTOMIZATION
@@ -147,6 +146,10 @@ def is_safe_url(target):
     return test_url.scheme in ('http', 'https') and ref_url.netloc == test_url.netloc
 
 
+class AbortException(HTTPException):
+	code = 500
+
+
 def crud_page(table_name, crud_step,
 		tables,
 		page_title=None,
@@ -192,7 +195,10 @@ def crud_page(table_name, crud_step,
 				_LOGGER.info(f"Displaying errors for {table_name} form's '%s'", form)
 			else:
 				_LOGGER.info(f"Adding {form.dict} to table {table_name}")
-				model_factory.create(**form.dict)
+				try:
+					model_factory.create(**form.dict)
+				except peewee.IntegrityError as e:
+					raise AbortException(description=str(e))
 				return redirect(url)
 	elif crud_step == "update":
 		if request.method == 'GET':
@@ -203,8 +209,11 @@ def crud_page(table_name, crud_step,
 			if form.validate():
 				_LOGGER.info(f"Modifying {table_name} '%s'", item_id)
 				query = model_factory.update(form.dict).where(model_factory.id == item_id)
-				if query.execute() != 1:
-					raise DatabaseException(f"Could not update {table_name} '%s'" % item_id)
+				try:
+					if query.execute() != 1:
+						raise DatabaseException(f"Could not update {table_name} '%s'" % item_id)
+				except peewee.IntegrityError as e:
+					raise AbortException(description=str(e))
 				return redirect(url)
 			else:
 				_LOGGER.info(f"Displaying form errors for {table_name} '%s'", ", ".join(["%s=%s" % (field.name, field.data) for field in form.fields.values()]))

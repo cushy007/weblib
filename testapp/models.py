@@ -21,7 +21,7 @@ class ChildModel(BaseModel):
 
 
 class ComprehensiveModel(BaseModel):
-	text = TextField(null=True)
+	text = TextField(null=True, unique=True)
 	text.i18n = _l("Text")
 	text_area = TextField(null=True)
 	text_area.i18n = _l("Text area")
