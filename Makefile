@@ -1,6 +1,9 @@
 TEST ?= ""
 
-PHONY: messages tests unit_tests func_tests serve serve_init_db
+PHONY: get_requirements messages tests unit_tests func_tests serve serve_init_db
+
+get_requirements:
+	./weblib/static/get_requirements.sh
 
 messages:
 	./script/make_messages.sh

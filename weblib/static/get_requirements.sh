@@ -10,6 +10,8 @@ CSS_DIR="./css/external/"
 FONTAWESOME_CSS_DIR="./fontawesome/css/"
 FONTAWESOME_WEBFONT_DIR="./fontawesome/webfonts/"
 
+pushd $(dirname $0)
+
 for dir in ${SCRIPT_DIR} ${CSS_DIR} ${FONT_AWESOME_DIR} ${FONTAWESOME_WEBFONT_DIR}; do
 	rm -f ${dir}/*
 done
@@ -47,3 +49,5 @@ rm -rf ${TMP_DIR}
 
 wget -O ${SCRIPT_DIR}/html5-qrcode.js https://github.com/mebjas/html5-qrcode/releases/download/v2.3.8/html5-qrcode.min.js
 wget -O ${SCRIPT_DIR}/YConsole.js https://www.yorgsite.fr/experiments/YConsole/YConsole-compiled.js
+
+popd
