@@ -31,6 +31,27 @@ define(["log"], function(log) {
 		.then(callback);
 	}
 
+	function fetchGetIfNoneMatch(location, etag, callback) {
+		let etagHeaders = new Headers();
+		let request = location;
+		etagHeaders.append('If-None-Match', [etag]);
+		console.log(`GET Fetch if none match '${etag}' '${request}'`);
+		fetch(request, {
+			method: "GET",
+			headers: etagHeaders,
+		})
+		.then((response) => {
+			if (response.status == 304) {
+				log.info(`response.status is "${response.status}`);
+				return null;
+			} else {
+				log.info("response is ", response);
+				return response;
+			}
+		})
+		.then(callback);
+	}
+
 	function fetchPost(location, formData, callback) {
 		console.log("POST Fetch with :");
 		for (let elt of formData.entries()) {
@@ -280,6 +301,7 @@ define(["log"], function(log) {
 		bindConfirmableElements: bindConfirmableElements,
 		bindPasswordToggle: bindPasswordToggle,
 		fetchGet: fetchGet,
+		fetchGetIfNoneMatch: fetchGetIfNoneMatch,
 		fetchPost: fetchPost,
 		showElement: showElement,
 		hideElement: hideElement,
