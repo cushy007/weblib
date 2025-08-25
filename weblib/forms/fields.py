@@ -489,7 +489,7 @@ class FileField(BaseField):
 	def do_action(self):
 		self.action(self._file_content)
 
-	def action_upload(self):
+	def action_upload(self, *_args, **_kwargs):
 		if self._data is None:
 			return
 		_LOGGER.info("Uploading file '%s'", self._file_storage.filename)
