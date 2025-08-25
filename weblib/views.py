@@ -55,10 +55,9 @@ class Site:
 		self._tabs = tabs
 
 	def render_page(self, in_login_process=False, is_display_main_tabs=True, **kwargs):
-		_LOGGER.info("Logged-in as user '%s'", current_user)
 		computed_html_template = "%s.html" % str(request.url_rule).lstrip('/')
-		_LOGGER.debug("computed_html_template=%s", computed_html_template)
 		page_path = computed_html_template.split('.')[0].split('/')
+		_LOGGER.info("Rendering page '%s'", page_path)
 		favicon = kwargs.pop('favicon', "favicon")
 		if page_path[0] in self._tabs:
 			try:
@@ -71,7 +70,7 @@ class Site:
 				_LOGGER.info("Will activate tab '%s'", active_path)
 				kwargs['active_tab'] = self._tabs[active_path[0]]
 				kwargs.setdefault('available_sub_tabs', self._tabs[active_path[0]].children.values())
-				_LOGGER.info("Available sub tabs are '%s'", kwargs['available_sub_tabs'])
+				#_LOGGER.debug("Available sub tabs are '%s'", kwargs['available_sub_tabs'])
 				kwargs['active_sub_tab'] = self._tabs[active_path[0]].children[active_path[1]]
 			except (IndexError, KeyError):
 				pass

@@ -34,7 +34,7 @@ def roles_required(*roles):
 
 		@wraps(functor)
 		def wrapper(*args, **kwargs):
-			_LOGGER.info("User has roles '%s' and functor accepts '%s'", current_user.roles, requires_roles)
+			_LOGGER.debug("User has roles '%s' and functor accepts '%s'", current_user.roles, requires_roles)
 			if any([user_has_role(current_user, role) for role in requires_roles]):
 				return functor(*args, **kwargs)
 			else:

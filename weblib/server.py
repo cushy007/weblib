@@ -66,7 +66,7 @@ def create_app(cleanup=False, cleanup_app_part=False, database_name="", is_disab
 
 if __name__ == "__main__":
 	for logger in ("werkzeug", ):
-		logging.getLogger(logger).setLevel(logging.WARNING)
+		logging.getLogger(logger).setLevel(logging.INFO)
 	server_port = environ['FLASK_PORT']
 	_LOGGER.info("Will run Flask app on port '%s'", server_port)
 	create_app(

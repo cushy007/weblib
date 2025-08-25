@@ -105,7 +105,7 @@ class User(UserMixin, BaseModel):
 			.join(RoleModel)
 		)
 		self.roles = tuple(r.role.name for r in query)
-		_LOGGER.debug("Current user roles are '%s'", self.roles)
+		#_LOGGER.debug("Current user roles are '%s'", self.roles)
 
 	@property
 	def is_active(self):
