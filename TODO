@@ -1,12 +1,12 @@
+=== Bugs to fix ===
+
+On smartphones only: When the filter is active on the tables, the Android keyboard prevents the events of the button box
+
+=== TODO ===
 Improve logs
 Remove double // in some requests
-
-Deployment in the cloud
-	https://blog.ippon.fr/2022/03/07/securisez-auditez-automatisez-vos-bases-postgresql-1/
-
-Login
-	help for roles
-
+User creation: provide help for roles
+Deployment in the cloud:	https://blog.ippon.fr/2022/03/07/securisez-auditez-automatisez-vos-bases-postgresql-1/
 
 Look & feel
 	block level button
